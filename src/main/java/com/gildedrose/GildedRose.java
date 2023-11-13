@@ -2,11 +2,31 @@ package com.gildedrose;
 
 import com.gildedrose.items.Item;
 
-class GildedRose {
-    Item[] items;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+class GildedRose {
+    private List<Item> items = new ArrayList<>();
+
+    public GildedRose() {
+
+    }
     public GildedRose(Item[] items) {
-        this.items = items;
+        for (Item i : items) {
+            add(i);
+        }
+    }
+
+    public void add(Item item) {
+        if ("Sulfuras, Hand of Ragnaros".equals(item.name)) {
+            item.quality = 80;
+        }
+        items.add(item);
+    }
+
+    public Item getItem(int i) {
+        return items.get(i);
     }
 
     public void updateQuality() {
@@ -37,6 +57,14 @@ class GildedRose {
                 item.quality += 3;
             } else {
                 item.quality = 0;
+            }
+
+        } else if (item.name.contains("Conjured")) {
+            item.sellIn--;
+            if (item.sellIn < 0) {
+                item.quality -= 4;
+            } else {
+                item.quality-=2;
             }
 
         } else {
