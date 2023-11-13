@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.items.Item;
+
 public class AppRunner {
 
     public static void main(String[] args) {
