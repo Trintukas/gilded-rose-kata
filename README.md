@@ -1,5 +1,13 @@
 # Gilded Rose starting position in Java
 
+## Use of maven
+
+Code was updated to use maven for builds.
+
+Now maven build will generate a jar file in `target` folder which can be used to run the application.
+
+TODO: Need to update `run` scripts to use jar package.
+
 ## Run the TextTest Fixture from Command-Line
 
 ```
